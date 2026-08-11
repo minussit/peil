@@ -88,7 +88,7 @@ section:last-of-type{border-bottom:0}
 .val{font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:12.5px;text-align:right}
 .sub{font-family:var(--mono);font-size:11.5px;color:var(--muted);white-space:nowrap;overflow:hidden}
 .days{display:flex;gap:2px;align-items:flex-end;height:110px;border-bottom:1px solid var(--rule);padding-bottom:2px}
-.day{flex:1;display:flex;align-items:flex-end;min-width:3px}
+.day{flex:1;display:flex;align-items:flex-end;min-width:3px;height:100%}
 .day i{width:100%;background:var(--accent);border-radius:2px 2px 0 0}
 table{border-collapse:collapse;width:100%;font-size:13px;margin-top:6px}
 th,td{padding:8px 12px;text-align:left;border-bottom:1px solid var(--rule);white-space:nowrap}

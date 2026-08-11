@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="582" height="310" viewBox="0 0 582 310" role="img" aria-label="peil branches terminal output">
+  <rect width="582" height="310" rx="10" fill="#0d1117" stroke="#30363d"/>
+  <path d="M0 10 A10 10 0 0 1 10 0 H572 A10 10 0 0 1 582 10 V34 H0 Z" fill="#161b22"/>
+  <line x1="0" y1="34" x2="582" y2="34" stroke="#30363d"/>
+  <circle cx="20" cy="17" r="5.5" fill="#ff5f56"/>
+  <circle cx="39" cy="17" r="5.5" fill="#ffbd2e"/>
+  <circle cx="58" cy="17" r="5.5" fill="#27c93f"/>
+  <text x="291" y="21" text-anchor="middle" font-size="11.5"
+    font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" fill="#6e7681">peil branches</text>
+  <g font-size="13" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace" fill="#c9d1d9">
+    <text y="65" xml:space="preserve"><tspan x="18.0" fill="#3fb950" font-weight="600">$</tspan><tspan x="33.6" fill="#e6edf3" font-weight="600">peil branches</tspan></text>
+    <text y="105" xml:space="preserve"><tspan x="18.0" fill="#58a6ff" font-weight="600">Cost per branch</tspan></text>
+    <text y="125" xml:space="preserve"><tspan x="18.0" fill="#6e7681">since 2026-07-12</tspan></text>
+    <text y="165" xml:space="preserve"><tspan x="18.0" fill="#6e7681">BRANCH               COST  MSGS  SESSIONS  STATE</tspan></text>
+    <text y="185" xml:space="preserve"><tspan x="18.0" fill="#bc8cff">feat/checkout-v2</tspan><tspan x="166.2" fill="#7ee787">$55.66</tspan><tspan x="213.0" fill="#c9d1d9">   349        10  </tspan><tspan x="353.4" fill="#3fb950">current</tspan><tspan x="423.6" fill="#58a6ff">████████████████</tspan></text>
+    <text y="205" xml:space="preserve"><tspan x="18.0" fill="#bc8cff">main</tspan><tspan x="166.2" fill="#7ee787">$23.63</tspan><tspan x="213.0" fill="#c9d1d9">   153         5  </tspan><tspan x="353.4" fill="#8b949e">merged</tspan><tspan x="423.6" fill="#58a6ff">███████</tspan><tspan x="478.2" fill="#21262d">─────────</tspan></text>
+    <text y="225" xml:space="preserve"><tspan x="18.0" fill="#bc8cff">feat/refunds</tspan><tspan x="166.2" fill="#7ee787">$13.20</tspan><tspan x="213.0" fill="#c9d1d9">    83         3  </tspan><tspan x="353.4" fill="#8b949e">merged</tspan><tspan x="423.6" fill="#58a6ff">████</tspan><tspan x="454.8" fill="#21262d">────────────</tspan></text>
+    <text y="245" xml:space="preserve"><tspan x="18.0" fill="#bc8cff">fix/webhook-retry</tspan><tspan x="166.2" fill="#7ee787">$10.64</tspan><tspan x="213.0" fill="#c9d1d9">    71         3  </tspan><tspan x="353.4" fill="#8b949e">merged</tspan><tspan x="423.6" fill="#58a6ff">███</tspan><tspan x="447.0" fill="#21262d">─────────────</tspan></text>
+    <text y="285" xml:space="preserve"><tspan x="18.0" fill="#3fb950">  All in-repo spend is attributed.</tspan></text>
+  </g>
+</svg>
