@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="peil">
+  <title>peil</title>
+  <!--
+    A gauge taking a reading — which is what "peil" means: to sound a depth,
+    to take a level. The needle is a sounding weight on its line.
+
+    Two colours, both legible on a white page and on GitHub's dark canvas, so
+    a single file serves README, avatar and favicon.
+  -->
+  <g fill="none" stroke="#7c8798" stroke-linecap="round">
+    <!-- the dial -->
+    <path d="M12 44 A 20 20 0 0 1 52 44" stroke-width="4.5" />
+    <!-- graduations -->
+    <path d="M15.5 31.5 L20 33.2" stroke-width="3" />
+    <path d="M32 24 L32 28.7" stroke-width="3" />
+    <path d="M48.5 31.5 L44 33.2" stroke-width="3" />
+  </g>
+
+  <!-- the reading: a sounding line dropped from the pivot -->
+  <g stroke="#3b82f6" stroke-width="4.5" stroke-linecap="round">
+    <path d="M32 44 L42.5 31.5" fill="none" />
+  </g>
+  <circle cx="32" cy="44" r="4.6" fill="#3b82f6" />
+</svg>
