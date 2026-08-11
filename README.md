@@ -1,8 +1,18 @@
-# peil
+<p align="center">
+  <img src="assets/logo.svg" width="84" alt="">
+</p>
 
-`npm i -g @peil/cli` &mdash; the command is `peil`.
+<h1 align="center">peil</h1>
 
-**What your AI coding sessions actually cost — per repo, per branch, per feature.**
+<p align="center">
+  <strong>What your AI coding sessions actually cost — per repo, per branch, per feature.</strong>
+</p>
+
+<p align="center">
+  <code>npm i -g @peil/cli</code> &mdash; the command is <code>peil</code>.
+</p>
+
+---
 
 `peil` reads Claude Code's local session transcripts and tells you where the money went. It runs entirely on your machine: no account, no upload, no network calls, and it never reads message content.
 
