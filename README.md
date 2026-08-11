@@ -5,54 +5,77 @@
 <h1 align="center">peil</h1>
 
 <p align="center">
-  <strong>What your AI coding sessions actually cost — per repo, per branch, per feature.</strong>
+  <strong>See what your AI coding sessions actually cost.</strong><br>
+  Per repo, per branch, per feature — from transcripts already on your disk.
 </p>
 
 <p align="center">
-  <code>npm i -g @peil/cli</code> &mdash; the command is <code>peil</code>.
+  <a href="https://www.npmjs.com/package/@peil/cli"><img alt="npm" src="https://img.shields.io/npm/v/%40peil%2Fcli?style=flat-square&color=3b82f6&label=npm"></a>
+  <img alt="node" src="https://img.shields.io/badge/node-%E2%89%A520-3b82f6?style=flat-square">
+  <a href="LICENSE"><img alt="licence" src="https://img.shields.io/badge/licence-MIT-3b82f6?style=flat-square"></a>
+  <img alt="no network" src="https://img.shields.io/badge/network_calls-none-3fb950?style=flat-square">
 </p>
 
----
+<p align="center">
+  <code>npx @peil/cli</code>
+</p>
 
-`peil` reads Claude Code's local session transcripts and tells you where the money went. It runs entirely on your machine: no account, no upload, no network calls, and it never reads message content.
+<p align="center">
+  <img src="assets/demo.svg" width="720" alt="peil summarising cost for a repository">
+</p>
 
-Run in a repository and it reports on that repository. This is `peil` on its own source tree:
+That's `peil` run on its own source tree — no flags, no setup, no account.
 
-```
-$ peil
+Two lines there are the whole reason this exists. **90 messages, but 2,608 duplicates skipped:** transcripts replay history, so anything that doesn't deduplicate reports wildly inflated totals. And **0% attributed to a branch**, because that session started a directory above the repo — `peil` tells you the number is incomplete instead of quietly showing you a smaller one as if it were the whole picture.
 
-peil
-~/projects/peil  ·  since 2026-05-13
-
-  $34.35  consumption value at list price
-
-  messages        57   sessions 1   active days 1
-  tokens          49.2M
-  per active day  $34.35
-
-By model
-
-MODEL            COST   SHARE  MSGS
-claude-opus-5  $34.35  100.0%    57  ██████████████████
-
-  0% of in-repo spend is tied to a branch  ($34.35 not attributable)
-  run peil hook install to attribute future sessions
-
-  2,578 duplicate message(s) skipped — transcripts replay history
-```
-
-Two of those lines are the point. **57 messages, but 2,578 duplicates skipped** — transcripts replay history, so a tool that doesn't deduplicate reports wildly inflated totals. And **0% attributed to a branch**, because this session started a directory above the repo. `peil` says so instead of quietly reporting a smaller number as though it were the whole picture.
-
----
-
-## Install
+## Try it
 
 ```sh
-npx @peil/cli        # no install
-npm i -g @peil/cli  # or keep it around
+cd your-project
+npx @peil/cli
 ```
 
-Requires Node 20+. `peil hook install` additionally needs `jq`.
+That's the whole quick start. Nothing to configure, nothing to sign up for. If you want to keep it around:
+
+```sh
+npm i -g @peil/cli   # then just: peil
+```
+
+Requires Node 20+. (`peil hook install` additionally needs `jq`.)
+
+## What you get
+
+### What did that feature cost?
+
+```sh
+peil branches
+```
+
+<img src="assets/branches.svg" width="640" alt="peil branches: cost broken down per git branch">
+
+Cost per branch, with what couldn't be attributed called out rather than hidden. Run `peil hook install` once and every future session records its real branch.
+
+### Where the money actually goes
+
+```sh
+peil buckets
+```
+
+<img src="assets/buckets.svg" width="620" alt="peil buckets: token share against cost share">
+
+Token counts and cost are not the same shape. Cache reads are almost all your tokens and a fraction of your bill; 1-hour cache writes are the reverse. `peil buckets` puts the two shares side by side — see [why the numbers differ](#why-the-numbers-differ-from-other-tools) for the arithmetic.
+
+### A report you can send someone
+
+```sh
+peil report          # writes peil-report.html
+```
+
+<img src="assets/report.png" width="820" alt="The standalone HTML report: headline cost, KPIs, and a daily bar chart">
+
+One self-contained HTML file — no assets, no scripts, no network. Open it, attach it, drop it in a wiki.
+
+<sub><i>The branch and report images use a generated sample dataset, so no real project names appear. The first screenshot is a genuine run.</i></sub>
 
 ## Commands
 
@@ -65,7 +88,13 @@ Requires Node 20+. `peil hook install` additionally needs `jq`.
 | `peil hook install` | Record the real git branch on future sessions |
 | `peil hook status` | Is branch recording working? |
 
-Options: `--days <n>` (default 30), `--since <date>`, `--all` (every project, not just this one), `--out <file>`, `--json`.
+| Option | What it does |
+|---|---|
+| `--days <n>` | Look back n days (default 30) |
+| `--since <date>` | Look back to an ISO date, overrides `--days` |
+| `--all` | Every project, not just this one |
+| `--out <file>` | Output path for `report` |
+| `--json` | Machine-readable output |
 
 ## Why the numbers differ from other tools
 
@@ -114,11 +143,13 @@ Session id, working directory, repository root, branch. Nothing else. Local file
 
 ## Privacy
 
-`peil` reads `~/.claude/projects/**/*.jsonl` and takes only scalar fields: model, token counts, timestamps, session id, working directory, branch, CLI version and tool names.
+`peil` runs entirely on your machine. **No account, no upload, no network calls of any kind, no telemetry.**
 
-It never reads `message.content` — not prompts, not responses, not file contents, not tool inputs or results. It makes no network requests of any kind. There is no telemetry and no account.
+It reads `~/.claude/projects/**/*.jsonl` and takes only scalar fields: model, token counts, timestamps, session id, working directory, branch, CLI version and tool names.
 
-The source is short and MIT-licensed; `src/transcripts.ts` is the only file that touches your transcripts, and it's worth the two minutes to read.
+It never reads `message.content` — not prompts, not responses, not file contents, not tool inputs or results.
+
+The source is short and MIT-licensed; [`src/transcripts.ts`](src/transcripts.ts) is the only file that touches your transcripts, and it's worth the two minutes to read.
 
 ## A note on "cost"
 
