@@ -1,0 +1,45 @@
+{
+  "name": "@peil/cli",
+  "version": "0.1.1",
+  "description": "What your AI coding sessions actually cost \u2014 per repo, per branch, per feature. Reads local Claude Code transcripts. Nothing leaves your machine.",
+  "keywords": [
+    "claude",
+    "claude-code",
+    "cost",
+    "tokens",
+    "usage",
+    "finops",
+    "cli"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "bin": {
+    "peil": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/minussit/peil.git"
+  },
+  "homepage": "https://github.com/minussit/peil#readme",
+  "bugs": {
+    "url": "https://github.com/minussit/peil/issues"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "prepublishOnly": "tsc",
+    "peil": "node dist/index.js"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.0"
+  }
+}
