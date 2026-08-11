@@ -1,7 +1,7 @@
 {
   "name": "@peil/cli",
-  "version": "0.1.1",
-  "description": "What your AI coding sessions actually cost \u2014 per repo, per branch, per feature. Reads local Claude Code transcripts. Nothing leaves your machine.",
+  "version": "0.1.2",
+  "description": "What your AI coding sessions actually cost — per repo, per branch, per feature. Reads local Claude Code transcripts. Nothing leaves your machine.",
   "keywords": [
     "claude",
     "claude-code",

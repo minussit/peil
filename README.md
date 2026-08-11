@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/logo.svg" width="84" alt="">
+  <img src="https://raw.githubusercontent.com/minussit/peil/main/assets/logo.svg" width="84" alt="">
 </p>
 
 <h1 align="center">peil</h1>
@@ -12,7 +12,7 @@
 <p align="center">
   <a href="https://www.npmjs.com/package/@peil/cli"><img alt="npm" src="https://img.shields.io/npm/v/%40peil%2Fcli?style=flat-square&color=3b82f6&label=npm"></a>
   <img alt="node" src="https://img.shields.io/badge/node-%E2%89%A520-3b82f6?style=flat-square">
-  <a href="LICENSE"><img alt="licence" src="https://img.shields.io/badge/licence-MIT-3b82f6?style=flat-square"></a>
+  <a href="https://github.com/minussit/peil/blob/main/LICENSE"><img alt="licence" src="https://img.shields.io/badge/licence-MIT-3b82f6?style=flat-square"></a>
   <img alt="no network" src="https://img.shields.io/badge/network_calls-none-3fb950?style=flat-square">
 </p>
 
@@ -21,7 +21,7 @@
 </p>
 
 <p align="center">
-  <img src="assets/demo.svg" width="720" alt="peil summarising cost for a repository">
+  <img src="https://raw.githubusercontent.com/minussit/peil/main/assets/demo.svg" width="720" alt="peil summarising cost for a repository">
 </p>
 
 That's `peil` run on its own source tree — no flags, no setup, no account.
@@ -51,7 +51,7 @@ Requires Node 20+. (`peil hook install` additionally needs `jq`.)
 peil branches
 ```
 
-<img src="assets/branches.svg" width="640" alt="peil branches: cost broken down per git branch">
+<img src="https://raw.githubusercontent.com/minussit/peil/main/assets/branches.svg" width="640" alt="peil branches: cost broken down per git branch">
 
 Cost per branch, with what couldn't be attributed called out rather than hidden. Run `peil hook install` once and every future session records its real branch.
 
@@ -61,7 +61,7 @@ Cost per branch, with what couldn't be attributed called out rather than hidden.
 peil buckets
 ```
 
-<img src="assets/buckets.svg" width="620" alt="peil buckets: token share against cost share">
+<img src="https://raw.githubusercontent.com/minussit/peil/main/assets/buckets.svg" width="620" alt="peil buckets: token share against cost share">
 
 Token counts and cost are not the same shape. Cache reads are almost all your tokens and a fraction of your bill; 1-hour cache writes are the reverse. `peil buckets` puts the two shares side by side — see [why the numbers differ](#why-the-numbers-differ-from-other-tools) for the arithmetic.
 
@@ -71,7 +71,7 @@ Token counts and cost are not the same shape. Cache reads are almost all your to
 peil report          # writes peil-report.html
 ```
 
-<img src="assets/report.png" width="820" alt="The standalone HTML report: headline cost, KPIs, and a daily bar chart">
+<img src="https://raw.githubusercontent.com/minussit/peil/main/assets/report.png" width="820" alt="The standalone HTML report: headline cost, KPIs, and a daily bar chart">
 
 One self-contained HTML file — no assets, no scripts, no network. Open it, attach it, drop it in a wiki.
 
@@ -149,7 +149,7 @@ It reads `~/.claude/projects/**/*.jsonl` and takes only scalar fields: model, to
 
 It never reads `message.content` — not prompts, not responses, not file contents, not tool inputs or results.
 
-The source is short and MIT-licensed; [`src/transcripts.ts`](src/transcripts.ts) is the only file that touches your transcripts, and it's worth the two minutes to read.
+The source is short and MIT-licensed; [`src/transcripts.ts`](https://github.com/minussit/peil/blob/main/src/transcripts.ts) is the only file that touches your transcripts, and it's worth the two minutes to read.
 
 ## A note on "cost"
 
